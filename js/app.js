@@ -13,8 +13,26 @@ const block = document.querySelector(".block");
 const backend = document.querySelector("#backend");
 const frontend = document.querySelector("#frontend");
 
+function validateKompaniya() {
+    if (kompaniyaInput.value.length < 4) {
+        alert("Kompaniya nomi eng kamida 4 ta belgidan iborat bo'lishi kerak");
+        kompaniyaInput.focus();
+        return false;
+    }
+    return true;
+}
+
+function validateLavozim() {
+    if (lavozim.value.length < 4) {
+        alert("Lavozim eng kamida 4 ta belgidan iborat bo'lishi kerak");
+        lavozim.focus();
+        return false;
+    }
+    return true;
+}
+
 function createCard(data) {
-  return `
+    return `
     <div class="card">
       <div class="site_left">
         <button data-id = ${data.id} class ="delete">delete</button>
