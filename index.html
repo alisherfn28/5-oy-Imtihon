@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job listing</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header><img src="img/Combined Shape.png" /></header>
+    <div class="container vakan_container">
+      <div class="Vakansiya">
+        <div class="vakan_title">
+          <h1 id="vakan_h1">Vakansiya ma'lumotlarini kiriting</h1>
+        </div>
+        <div class="vakansiya_forms">
+          <div id="logo">
+            <div id="logo_title">
+              <h3>Logotip URL</h3>
+            </div>
+            <div id="logo_input">
+              <form id="logo_form">
+                <input
+                  type="url"
+                  id="logo_in"
+                  placeholder="Logotip URL manzilini kiriting"
+                />
+              </form>
+            </div>
+          </div>
+          <div id="kompaniya">
+            <div id="kompaniya_title">
+              <h3>Kompaniya nomi</h3>
+            </div>
+            <div id="kompaniya_input">
+              <form id="kompaniya_form">
+                <input type="url" id="komp_in" placeholder="Manage" />
+              </form>
+            </div>
+          </div>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" id="new" value="new" /> Yangi
+            </label>
+            <label>
+              <input type="checkbox" id="featured" value="featured" /> Featured
+            </label>
+          </div>
+          <div id="lavozim">
+            <div id="lavozim_title">
+              <h3>lavozim</h3>
+            </div>
+            <div id="lavozim_input">
+              <form id="lavozim_form">
+                <input type="url" id="lavoz_in" placeholder="lavozim" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="select">
+          <div class="select-box">
+            <h4 class="title">Vaqt</h4>
+            <select>
+              <option value="">Tanlang</option>
+              <option value="1d ago">1d ago</option>
+              <option value="2d ago">2d ago</option>
+              <option value="3d ago">3d ago</option>
+              <option value="4d ago">4d ago</option>
+              <option value="5d ago">5d ago</option>
+              <option value="6d ago">6d ago</option>
+              <option value="7d ago">7d ago</option>
+            </select>
+          </div>
+          <div class="select-box">
+            <h4 class="title">Ish turi</h4>
+            <select>
+              <option value="">Tanlang</option>
+              <option value="Full time">Full time</option>
+              <option value="Part time">Part time</option>
+              <option value="Contract">Contract</option>
+            </select>
+          </div>
+          <div class="select-box">
+            <h4 class="title">Joylashuv</h4>
+            <select>
+              <option value="">Tanlang</option>
+              <option value="Worldwide">Worldwide</option>
+              <option value="USA only">USA only</option>
+              <option value="UK only">UK only</option>
+            </select>
+          </div>
+        </div>
+        <div class="vakan_bottom">
+          <div class="konikmalar">
+            <div class="konikma_title">
+              <h4>Ko'nikmalar</h4>
+            </div>
+            <div class="konikma_chekin">
+              <div class="left_konikma">
+                <div class="fullstak">
+                  <label>
+                    <input type="checkbox" value="Fullstack" /> Fullstack
+                  </label>
+                </div>
+                <div class="python">
+                  <label>
+                    <input type="checkbox" value="Python" /> Python
+                  </label>
+                </div>
+              </div>
+              <div class="right_konikma">
+                <div class="midweight">
+                  <label>
+                    <input type="checkbox" value="Midweight" /> Midweight
+                  </label>
+                </div>
+                <div class="react">
+                  <label> <input type="checkbox" value="React" /> React </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button id="btn">Saqlash</button>
+          </div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="site_left">
+          <div class="logo_img">
+            <img src="./img/img.svg" alt="logo" />
+          </div>
+          <div class="site_left_tit">
+            <div class="soxa_top">
+              <div class="title_top">
+                <div class="title_soxa">
+                  <h3>Photosnap</h3>
+                </div>
+                <div class="span_soxa">
+                  <div class="new">
+                    <span>NEW!</span>
+                  </div>
+                  <div class="fatured">
+                    <span>FEATURED</span>
+                  </div>
+                </div>
+              </div>
+              <div class="senior">
+                <div class="senior_top">
+                  <h4>Senior Frontend Developer</h4>
+                </div>
+                <div class="senior_bottom">
+                  <ul id="bottom_ul">
+                    <li>1d ago</li>
+                    <li class="point">.</li>
+                    <li>Full Time</li>
+                    <li class="point">.</li>
+                    <li>USA only</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="site_right">
+          <ul id="right_ul">
+            <li>Frontend</li>
+            <li>Senior</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
