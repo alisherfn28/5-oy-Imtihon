@@ -13,28 +13,12 @@ const block = document.querySelector(".block");
 const backend = document.querySelector("#backend");
 const frontend = document.querySelector("#frontend");
 
-function validateKompaniya() {
-  if (kompaniyaInput.value.length < 4) {
-    alert("Kompaniya nomi eng kamida 4 ta belgidan iborat bo'lishi kerak");
-    kompaniyaInput.focus();
-    return false;
-  }
-  return true;
-}
-
-function validateLavozim() {
-  if (lavozim.value.length < 4) {
-    alert("Lavozim eng kamida 4 ta belgidan iborat bo'lishi kerak");
-    lavozim.focus();
-    return false;
-  }
-  return true;
-}
-
 function createCard(data) {
   return `
     <div class="card">
       <div class="site_left">
+        <button data-id = ${data.id} class ="delete">delete</button>
+
         <div class="logo_img">
           <img src="${data.logo}" alt="logo" />
         </div>
@@ -48,7 +32,7 @@ function createCard(data) {
                 <div class="new">
                   ${data.new ? `<span> New </span>` : ""}
                 </div>
-                <div class="featured">
+                <div class="fatured">
                   ${data.featured ? `<span> Featured </span>` : ""}
                 </div>
               </div>
@@ -78,6 +62,7 @@ function createCard(data) {
           ${data.backend ? `<li>Backend</li>` : ""}
         </ul>
       </div>
+
     </div>
   `;
 }
@@ -104,6 +89,7 @@ button &&
     }
 
     const job = {
+      id: Date.now(),
       logo: logo.value,
       kompaniya: kompaniyaInput.value,
       new: yangi.checked,
@@ -127,32 +113,33 @@ button &&
   });
 
 document.addEventListener("DOMContentLoaded", function () {
-  let todos = getDataFromLocalStorage();
+  let jobs = getDataFromLocalStorage();
 
-  todos.forEach((job) => {
+  jobs.forEach((job) => {
     let card = createCard(job);
     block.innerHTML += card;
   });
-});
 
-let buttons = document.querySelectorAll(".delete");
+  let buttons = document.querySelectorAll(".delete");
 
-buttons.length > 0 &&
-  buttons.forEach((btn) => {
-    btn &&
-      btn.addEventListener("click", function (event) {
-        let isDelete = confirm("Rostan ham ochirmoqchimisiz ???");
+  buttons.length > 0 &&
+    buttons.forEach((btn) => {
+      btn &&
+        btn.addEventListener("click", function (event) {
+          let isDelete = confirm("Rostan ham ochirmoqchimisiz ???");
 
-        if (isDelete) {
-          this.parentNode.remove();
-          let id = this.getAttribute("data-id");
-          if (id) {
-            todos = todos.filter((value) => {
-              return value.id != id;
-            });
+          if (isDelete) {
+            this.parentNode.parentNode.remove();
 
-            localStorage.setItem("todos", JSON.stringify(todos));
+            let id = this.getAttribute("data-id");
+            if (id) {
+              jobs = jobs.filter((value) => {
+                return value.id != id;
+              });
+
+              localStorage.setItem("jobs", JSON.stringify(jobs));
+            }
           }
-        }
-      });
-  });
+        });
+    });
+});
